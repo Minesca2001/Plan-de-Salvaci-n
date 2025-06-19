@@ -1,60 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const steps = document.querySelectorAll('.step');
-    const container = document.querySelector('.container');
-
-    let currentStepIndex = 0;
-
-    function showStep(index) {
-        if (index < 0 || index >= steps.length) {
-            console.error("Attempted to show invalid step index:", index);
-            return;
-        }
-
-        steps.forEach((step, i) => {
-            if (i === index) {
-                step.classList.remove('hidden');
-            } else {
-                step.classList.add('hidden');
-            }
-        });
-        currentStepIndex = index;
-    }
-
-    container.addEventListener('click', (event) => {
-        const target = event.target;
-
-        if (target.tagName === 'BUTTON') {
-            const parentSection = target.closest('.step');
-            if (!parentSection) return;
-
-            const buttonStepIndex = Array.from(steps).indexOf(parentSection);
-
-            if (target.classList.contains('next-button')) {
-                 // Handle next button clicks
-                 if (buttonStepIndex < steps.length - 1) {
-                    showStep(buttonStepIndex + 1);
-                 }
-            } else if (target.classList.contains('prev-button')) {
-                // Handle previous button clicks
-                if (buttonStepIndex === 6) {
-                    // If it's the "Cerrar" button in the last step
-                    window.close(); // Attempt to close the window/tab
-                } else if (buttonStepIndex > 0) {
-                    // For other steps, go back
-                    showStep(buttonStepIndex - 1);
-                }
-            } else if (target.classList.contains('restart-button')) {
-                // Handle restart button click
-                showStep(0);
-            }
-        }
-    });
-
-    // Show the initial step when the page loads
-    showStep(currentStepIndex);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('.step'); 
     const container = document.querySelector('.container');
     const loginModal = document.getElementById('login-modal');
@@ -69,18 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStepIndex = 0;
     let userData = {};
 
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec'; // Reemplaza con tu URL real
+
     function showStep(index) {
-        if (index < 0 || index >= steps.length) {
-            console.error("Attempted to show invalid step index:", index);
-            return;
-        }
+        if (index < 0 || index >= steps.length) return;
 
         steps.forEach((step, i) => {
-            if (i === index) {
-                step.classList.remove('hidden');
-            } else {
-                step.classList.add('hidden');
-            }
+            step.classList.toggle('hidden', i !== index);
         });
         currentStepIndex = index;
     }
@@ -93,27 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const sex = userSexSelect.value;
         const address = userAddressSelect.value;
 
-        if (name === '') {
+        if (!name) {
             alert('Por favor, introduce tu nombre para continuar.');
-            userNameInput.focus(); 
+            userNameInput.focus();
             return;
         }
-         if (address === '') {
+
+        if (!address) {
             alert('Por favor, selecciona tu dirección para continuar.');
-             userAddressSelect.focus();
+            userAddressSelect.focus();
             return;
         }
 
         userData = {
-            name: name,
-            email: email,
-            country: country,
-            phone: phone,
-            sex: sex,
-            address: address
+            nombre: name,
+            correo: email,
+            pais: country,
+            telefono: phone,
+            sexo: sex,
+            direccion: address
         };
-
-        console.log("User data captured:", userData);
 
         loginModal.classList.add('hidden');
         container.classList.remove('hidden');
@@ -123,24 +61,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.addEventListener('click', (event) => {
         const target = event.target;
+        if (target.tagName !== 'BUTTON') return;
 
-        if (target.tagName === 'BUTTON') {
-            const parentSection = target.closest('.step');
-            if (!parentSection) return;
+        const parentSection = target.closest('.step');
+        if (!parentSection) return;
 
-            const buttonStepIndex = Array.from(steps).indexOf(parentSection);
+        const buttonStepIndex = Array.from(steps).indexOf(parentSection);
 
-            if (target.classList.contains('next-button')) {
-                if (buttonStepIndex < steps.length - 1) { 
-                    showStep(buttonStepIndex + 1);
-                }
-            } else if (target.classList.contains('prev-button')) {
-                if (buttonStepIndex > 0) {
-                    showStep(buttonStepIndex - 1);
-                }
-            } else if (target.classList.contains('restart-button')) {
-                showStep(0);
+        if (target.classList.contains('next-button')) {
+            if (buttonStepIndex < steps.length - 1) {
+                showStep(buttonStepIndex + 1);
             }
+        } else if (target.classList.contains('prev-button')) {
+            if (buttonStepIndex === steps.length - 1) {
+                // Último paso: guardar datos y cerrar
+                fetch(WEB_APP_URL, {
+                    method: "POST",
+                    body: JSON.stringify(userData),
+                    headers: { "Content-Type": "application/json" }
+                }).then(() => {
+                    alert("¡Gracias! Tus datos han sido guardados.");
+                    window.close(); // Intenta cerrar la ventana (solo si fue abierta por script)
+                }).catch(err => {
+                    alert("Error al guardar los datos.");
+                    console.error(err);
+                });
+            } else if (buttonStepIndex > 0) {
+                showStep(buttonStepIndex - 1);
+            }
+        } else if (target.classList.contains('restart-button')) {
+            showStep(0);
         }
     });
+
+    showStep(currentStepIndex);
 });
