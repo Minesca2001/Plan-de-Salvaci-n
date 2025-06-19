@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStepIndex = 0;
     let userData = {};
 
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec'; // Reemplaza con tu URL real
-
     function showStep(index) {
         if (index < 0 || index >= steps.length) return;
 
@@ -75,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (target.classList.contains('prev-button')) {
             if (buttonStepIndex === steps.length - 1) {
                 // Último paso: guardar datos y cerrar
-                fetch(WEB_APP_URL, {
+                fetch('https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec', {
                     method: "POST",
                     body: JSON.stringify(userData),
                     headers: { "Content-Type": "application/json" }
