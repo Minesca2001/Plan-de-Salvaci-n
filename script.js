@@ -72,19 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (target.classList.contains('prev-button')) {
             if (buttonStepIndex === steps.length - 1) {
-                // Último paso: guardar datos y cerrar
-                fetch('https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec', {
-                    method: "POST",
-                    body: JSON.stringify(userData),
-                    headers: { "Content-Type": "application/json" }
-                }).then(() => {
-                    alert("¡Gracias! Tus datos han sido guardados.");
-                    window.close(); // Intenta cerrar la ventana (solo si fue abierta por script)
-                }).catch(err => {
-                    alert("Error al guardar los datos.");
-                    console.error(err);
-                });
-            } else if (buttonStepIndex > 0) {
                 showStep(buttonStepIndex - 1);
             }
         } else if (target.classList.contains('restart-button')) {
@@ -93,4 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showStep(currentStepIndex);
+    
+    // Último paso: guardar datos y cerrar
+    const closeButton = document.getElementById('close-button');
+
+closeButton.addEventListener('click', () => {
+    fetch('https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec', {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(() => {
+        alert("¡Gracias! Tus datos han sido guardados.");
+        window.close(); // Intenta cerrar la ventana (solo si fue abierta por script)
+    })
+    .catch(err => {
+        alert("Error al guardar los datos.");
+        console.error(err);
+    });
+});
 });
