@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userPhoneInput = document.getElementById('user-phone');
     const userSexSelect = document.getElementById('user-sex');
     const userAddressSelect = document.getElementById('user-address');
+    const closeButton = document.getElementById('close-button');
 
     let currentStepIndex = 0;
     let userData = {};
@@ -93,11 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    showStep(currentStepIndex);
-
-    // Último paso: guardar datos y cerrar
-    const closeButton = document.getElementById('close-button');
-
     closeButton.addEventListener('click', async () => {
         if (Object.keys(userData).length === 0) {
             alert("Por favor, completa el formulario antes de cerrar.");
@@ -122,5 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(err);
         }
     });
+        showStep(currentStepIndex);
 });
         
