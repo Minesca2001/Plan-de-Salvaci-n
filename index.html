@@ -1,4 +1,4 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -21,163 +21,160 @@
   <meta name="twitter:description" content="Conoce el mensaje de amor de Jesús y el camino a la salvación." />
   <meta name="twitter:image" content="https://minesca2001.github.io/Plan-de-Salvaci-n/assets/imagen-principal.jpg" />
   <link rel="icon" href="https://minesca2001.github.io/Plan-de-Salvaci-n/favicon.ico" type="image/x-icon" />
-    <title>El Plan de Salvación</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="importmap">
-        {
-            "imports": {
-                "script.js": "script.js"
-            }
-        }
-    </script>
+  <title>El Plan de Salvación</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "script.js": "script.js"
+      }
+    }
+  </script>
 </head>
 <body>
-<!-- Modal de Inicio/Bienvenida -->
-    <div id="login-modal" class="modal-overlay">
-        <div class="modal-content">
-            <h2>Bienvenido</h2>
-            <p>Introduce tus datos para empezar este viaje.</p>
-            
-            <div class="input-group">
-                <label for="user-name">Nombre:</label>
-                <input type="text" id="user-name" placeholder="Tu Nombre" required>
-            </div>
 
-            <div class="input-group">
-                <label for="user-email">Email:</label>
-                <input type="email" id="user-email" placeholder="tu.email@ejemplo.com">
-            </div>
+  <!-- Modal de Inicio/Bienvenida -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Bienvenido</h2>
+      <p>Introduce tus datos para empezar este viaje.</p>
 
-             <div class="input-group">
-                <label for="user-country">País:</label>
-                <input type="text" id="user-country" placeholder="Tu País" value="República Dominicana" required>
-            </div>
+      <div class="input-group">
+        <label for="user-name">Nombre:</label>
+        <input type="text" id="user-name" placeholder="Tu Nombre" required>
+      </div>
 
-            <!-- Nuevos campos -->
-            <div class="input-group">
-                <label for="user-phone">Teléfono:</label>
-                <input type="tel" id="user-phone" placeholder="Ej: 809-555-1234">
-            </div>
+      <div class="input-group">
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" placeholder="tu.email@ejemplo.com">
+      </div>
 
-            <div class="input-group">
-                <label for="user-sex">Sexo:</label>
-                <select id="user-sex">
-                    <option value="">Selecciona</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Femenino">Femenino</option>
-                    <option value="Otro">Otro</option>
-                    <option value="Prefiero no decir">Prefiero no decir</option>
-                </select>
-            </div>
+      <div class="input-group">
+        <label for="user-country">País:</label>
+        <input type="text" id="user-country" placeholder="Tu País" value="República Dominicana" required>
+      </div>
 
-            <div class="input-group">
-                <label for="user-address">Dirección (San Pedro de Macorís):</label>
-                 <select id="user-address" required>
-                    <option value="">Selecciona un lugar</option>
-                    <!-- Ciudades y Municipios -->
-                    <option value="San Pedro de Macorís (Ciudad)">San Pedro de Macorís (Ciudad)</option>
-                    <option value="Consuelo (Municipio)">Consuelo (Municipio)</option>
-                    <option value="Quisqueya (Municipio)">Quisqueya (Municipio)</option>
-                    <option value="Ramón Santana (Municipio)">Ramón Santana (Municipio)</option>
-                    <option value="Guayacanes (Municipio)">Guayacanes (Municipio)</option>
-                    <option value="Los Llanos (Municipio)">Los Llanos (Municipio)</option>
-                    <!-- Distritos Municipales -->
-                    <option value="Gautier (Distrito Municipal)">Gautier (Distrito Municipal)</option>
-                    <option value="El Puerto (Distrito Municipal)">El Puerto (Distrito Municipal)</option>
-                    <!-- Secciones y Bateyes -->
-                    <option value="Santa Fe (Sector SPM)">Santa Fe (Sector SPM)</option>
-                    <option value="Ingenio Cristóbal Colón (Sección)">Ingenio Cristóbal Colón (Sección)</option>
-                    <option value="Cumayasa (Sección)">Cumayasa (Sección)</option>
-                    <option value="Batey Central">Batey Central</option>
-                    <option value="Batey Palo Seco">Batey Palo Seco</option>
-                    <option value="Batey Lebrón">Batey Lebrón</option>
-                    <option value="Batey Margarita">Batey Margarita</option>
-                    <option value="Batey Alemán">Batey Alemán</option>
-                    <option value="Batey Caimito">Batey Caimito</option>
-		    <option value="Higuey (Ciudad)">Higuey (Ciudad)</option>
-                    <option value="Montecristi (Ciudad)">Montecristi (Ciudad)</option>
-                    <option value="Puerto Plata (Ciudad)">Puerto Plata (Ciudad)</option>
-                    <option value="Santo Domingo (Ciudad)">Santo Domingo (Ciudad)</option>
-                    <option value="La Romana (Ciudad)">La Romana (Ciudad)</option>
-                    <option value="Hato Mayor (Ciudad)">Hato Mayor (Ciudad)</option>
-                    <option value="Monteplata (Ciudad)">Monte Plata (Ciudad)</option>
-                    <!-- Puedes añadir más opciones aquí -->
-                </select>
-            </div>
-            <!-- Fin Nuevos campos -->
+      <!-- Nuevos campos -->
+      <div class="input-group">
+        <label for="user-phone">Teléfono:</label>
+        <input type="tel" id="user-phone" placeholder="Ej: 809-555-1234">
+      </div>
 
-            <button id="enter-button">Ingresar</button>
-        </div>
+      <div class="input-group">
+        <label for="user-sex">Sexo:</label>
+        <select id="user-sex">
+          <option value="">Selecciona</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+          <option value="Prefiero no decir">Prefiero no decir</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="user-address">Dirección (San Pedro de Macorís):</label>
+        <select id="user-address" required>
+          <option value="">Selecciona un lugar</option>
+          <option value="San Pedro de Macorís (Ciudad)">San Pedro de Macorís (Ciudad)</option>
+          <option value="Consuelo (Municipio)">Consuelo (Municipio)</option>
+          <option value="Quisqueya (Municipio)">Quisqueya (Municipio)</option>
+          <option value="Ramón Santana (Municipio)">Ramón Santana (Municipio)</option>
+          <option value="Guayacanes (Municipio)">Guayacanes (Municipio)</option>
+          <option value="Los Llanos (Municipio)">Los Llanos (Municipio)</option>
+          <option value="Gautier (Distrito Municipal)">Gautier (Distrito Municipal)</option>
+          <option value="El Puerto (Distrito Municipal)">El Puerto (Distrito Municipal)</option>
+          <option value="Santa Fe (Sector SPM)">Santa Fe (Sector SPM)</option>
+          <option value="Ingenio Cristóbal Colón (Sección)">Ingenio Cristóbal Colón (Sección)</option>
+          <option value="Cumayasa (Sección)">Cumayasa (Sección)</option>
+          <option value="Batey Central">Batey Central</option>
+          <option value="Batey Palo Seco">Batey Palo Seco</option>
+          <option value="Batey Lebrón">Batey Lebrón</option>
+          <option value="Batey Margarita">Batey Margarita</option>
+          <option value="Batey Alemán">Batey Alemán</option>
+          <option value="Batey Caimito">Batey Caimito</option>
+          <option value="Higuey (Ciudad)">Higuey (Ciudad)</option>
+          <option value="Montecristi (Ciudad)">Montecristi (Ciudad)</option>
+          <option value="Puerto Plata (Ciudad)">Puerto Plata (Ciudad)</option>
+          <option value="Santo Domingo (Ciudad)">Santo Domingo (Ciudad)</option>
+          <option value="La Romana (Ciudad)">La Romana (Ciudad)</option>
+          <option value="Hato Mayor (Ciudad)">Hato Mayor (Ciudad)</option>
+          <option value="Monteplata (Ciudad)">Monte Plata (Ciudad)</option>
+        </select>
+      </div>
+
+      <button id="enter-button">Ingresar</button>
     </div>
-    <div class="container">
-        <h1>El Plan de Salvación</h1>
+  </div>
 
-        <section id="step-0" class="step">
-            <h2>1. El Amor de Dios</h2>
-            <img src="gods-love.png" alt="Corazón y una cruz">
-            <p>Dios te ama profundamente y tiene un plan maravilloso para tu vida.</p>
-            <p>En Juan 3:16 leemos: "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
-            <button class="next-button">Siguiente</button>
-        </section>
+  <div class="container">
+    <h1>El Plan de Salvación</h1>
 
-        <section id="step-1" class="step hidden">
-            <h2>2. El Problema: El Pecado</h2>
-            <img src="sin-barrier.png" alt="Barrera entre persona y Dios">
-            <p>El pecado es todo lo que hacemos, decimos o pensamos que desagrada a Dios. El pecado nos separa de Él.</p>
-            <p>Romanos 3:23 dice: "Por cuanto todos pecaron, y están destituidos de la gloria de Dios."</p>
-            <button class="prev-button">Anterior</button>
-            <button class="next-button">Siguiente</button>
-        </section>
+    <section id="step-0" class="step">
+      <h2>1. El Amor de Dios</h2>
+      <img src="gods-love.png" alt="Corazón y una cruz">
+      <p>Dios te ama profundamente y tiene un plan maravilloso para tu vida.</p>
+      <p>Juan 3:16 — "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna."</p>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-        <section id="step-2" class="step hidden">
-            <h2>3. La Solución: Jesucristo</h2>
-            <img src="jesus-bridge.png" alt="Puente hecho por la cruz">
-            <p>Jesús es el Hijo de Dios. Murió en la cruz para pagar el precio por nuestros pecados y resucitó, venciendo a la muerte.</p>
-            <p>Romanos 6:23 dice: "Porque la paga del pecado es muerte, mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro." Jesús es el puente que nos une de nuevo con Dios.</p>
-            <button class="prev-button">Anterior</button>
-            <button class="next-button">Siguiente</button>
-        </section>
+    <section id="step-1" class="step hidden">
+      <h2>2. El Problema: El Pecado</h2>
+      <img src="sin-barrier.png" alt="Barrera entre persona y Dios">
+      <p>El pecado es todo lo que hacemos, decimos o pensamos que desagrada a Dios. El pecado nos separa de Él.</p>
+      <p>Romanos 3:23 — "Por cuanto todos pecaron, y están destituidos de la gloria de Dios."</p>
+      <button class="prev-button">Anterior</button>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-        <section id="step-3" class="step hidden">
-            <h2>4. Nuestra Respuesta: Arrepentimiento y Fe</h2>
-            <img src="open-heart.png" alt="Mano abriendo puerta de corazón">
-            <p>Para recibir el perdón de Dios y la vida eterna, necesitamos arrepentirnos de nuestros pecados (cambiar nuestra forma de pensar y vivir) y poner nuestra fe en Jesucristo como nuestro Salvador y Señor.</p>
-            <p>Hechos 3:19 dice: "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados; para que vengan de la presencia del Señor tiempos de refrigerio."</p>
-             <button class="prev-button">Anterior</button>
-            <button class="next-button">Siguiente</button>
-        </section>
+    <section id="step-2" class="step hidden">
+      <h2>3. La Solución: Jesucristo</h2>
+      <img src="jesus-bridge.png" alt="Puente hecho por la cruz">
+      <p>Jesús es el Hijo de Dios. Murió en la cruz para pagar el precio por nuestros pecados y resucitó, venciendo a la muerte.</p>
+      <p>Romanos 6:23 — "Porque la paga del pecado es muerte, mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro."</p>
+      <button class="prev-button">Anterior</button>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-        <section id="step-4" class="step hidden">
-            <h2>5. La Nueva Vida</h2>
-            <img src="new-life.png" alt="Persona caminando hacia la luz">
-            <p>Cuando recibes a Jesús en tu vida, te conviertes en un hijo de Dios. Él te da una nueva vida, llena de propósito y esperanza. El Espíritu Santo viene a vivir en ti para guiarte y ayudarte a crecer.</p>
-            <p>2 Corintios 5:17 dice: "De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas."</p>
-             <button class="prev-button">Anterior</button>
-            <button class="next-button">Siguiente</button> 
-        </section>
+    <section id="step-3" class="step hidden">
+      <h2>4. Nuestra Respuesta: Arrepentimiento y Fe</h2>
+      <img src="open-heart.png" alt="Mano abriendo puerta de corazón">
+      <p>Para recibir el perdón de Dios y la vida eterna, necesitamos arrepentirnos de nuestros pecados y poner nuestra fe en Jesucristo como nuestro Salvador y Señor.</p>
+      <p>Hechos 3:19 — "Así que, arrepentíos y convertíos, para que sean borrados vuestros pecados."</p>
+      <button class="prev-button">Anterior</button>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-        <section id="step-5" class="step hidden">
-            <h2>¡Felicitaciones!</h2>
-            <img src="celebration.png" alt="Manos levantadas en celebración">
-            <p>Has completado el Plan de Salvación. Si has decidido poner tu fe en Jesús hoy, ¡tu vida ha cambiado para siempre! Busca una iglesia donde puedas crecer en tu fe y aprender más sobre Dios.</p>
-            <button class="prev-button">Anterior</button> 
-            <button class="next-button">Siguiente</button> 
-        </section>
+    <section id="step-4" class="step hidden">
+      <h2>5. La Nueva Vida</h2>
+      <img src="new-life.png" alt="Persona caminando hacia la luz">
+      <p>Cuando recibes a Jesús en tu vida, te conviertes en un hijo de Dios. Él te da una nueva vida, llena de propósito y esperanza.</p>
+      <p>2 Corintios 5:17 — "De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas."</p>
+      <button class="prev-button">Anterior</button>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-        <section id="step-6" class="step hidden">
-            <h2>Contáctanos</h2>
-            <p>Si tienes preguntas o quieres saber más, nos encantaría ayudarte.</p>
-            <p>Puedes contactarnos en:</p>
-            <p>Email: <a href="/cdn-cgi/l/email-protection#6b1f1e450e060a02072b0e010e061b070445080406"><span class="__cf_email__" data-cfemail="76020358131b171f1a36131c131b061a195815191b">[email&#160;protected]</span></a></p>
-            <p>Grupo de WhatsApp: </p>
-            <p>¡Esperamos saber de ti!</p>
-            <button class="restart-button">Volver a empezar</button> 
-            <button id="close-button">Cerrar</button> 
-        </section>
+    <section id="step-5" class="step hidden">
+      <h2>¡Felicitaciones!</h2>
+      <img src="celebration.png" alt="Manos levantadas en celebración">
+      <p>Has completado el Plan de Salvación. Si has decidido poner tu fe en Jesús hoy, ¡tu vida ha cambiado para siempre!</p>
+      <p>Busca una iglesia donde puedas crecer en tu fe y aprender más sobre Dios.</p>
+      <button class="prev-button">Anterior</button>
+      <button class="next-button">Siguiente</button>
+    </section>
 
-    </div>
+    <section id="step-6" class="step hidden">
+      <h2>Contáctanos</h2>
+      <p>Si tienes preguntas o quieres saber más, nos encantaría ayudarte.</p>
+      <p>Email: <a href="/cdn-cgi/l/email-protection#..."><span class="__cf_email__" data-cfemail="...">[email&#160;protected]</span></a></p>
+      <p>Grupo de WhatsApp:</p>
+      <p>¡Esperamos saber de ti!</p>
+      <button class="restart-button">Volver a empezar</button>
+      <button id="close-button">Cerrar</button>
+    </section>
+  </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script src="script.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="script.js"></script>
 </body>
-</html>
+	</html>
+	
