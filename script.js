@@ -1,3 +1,4 @@
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const steps = document.querySelectorAll('.step'); 
     const container = document.querySelector('.container');
@@ -12,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.getElementById('close-button');
 
     let currentStepIndex = 0;
-    let userData = {};
 
     function showStep(index) {
         if (index < 0 || index >= steps.length) return;
@@ -42,30 +42,27 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        userData = {
-            nombre: name,
-            correo: email,
-            pais: country,
-            telefono: phone,
-            sexo: sex,
-            direccion: address
-        };
-
-        console.log("Datos que se enviarán:", userData);
+        // Crear FormData en lugar de JSON
+        const formData = new FormData();
+        formData.append("nombre", name);
+        formData.append("correo", email);
+        formData.append("pais", country);
+        formData.append("telefono", phone);
+        formData.append("sexo", sex);
+        formData.append("direccion", address);
 
         fetch('https://script.google.com/macros/s/AKfycbyOUbWYEYbtZJ-alSVn-jo0ynIsKbDxnmjdHgR1rbO9JdPT1CamY1yJH2c_DirS4UI6/exec', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(userData)
+            body: formData
         })
-        .then(res => res.json())
+        .then(res => res.text())
         .then(data => {
             console.log("Respuesta del servidor:", data);
             alert("¡Gracias! Tus datos han sido guardados.");
         })
         .catch(err => {
             console.error("Error al enviar datos:", err);
-            alert("Error al guardar los datos.");
+            alert("Hubo un problema al enviar tus datos.");
         });
 
         loginModal.classList.add('hidden');
@@ -96,11 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeButton.addEventListener('click', () => {
-        // Solo cerrar ventana, sin enviar datos
         alert("Gracias por visitar. Puedes cerrar esta pestaña.");
         window.close();
     });
 
     showStep(currentStepIndex);
 });
-            
+</script>
