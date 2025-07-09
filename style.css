@@ -184,7 +184,23 @@ button:active {
     color: #333;
     font-size: 1em;
 }
-
+.modal-content input:focus {
+            border-bottom: 2px solid #007BFF;
+        }
+.modal-content label {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            transition: 0.3s;
+            color: #888;
+        }
+.modal-content input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 0;
+            color: #007BFF;
+            font-size: 12px;
+        }
 .modal-content input[type="text"],
 .modal-content input[type="email"],
 .modal-content input[type="tel"],
