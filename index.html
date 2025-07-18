@@ -38,23 +38,28 @@
       </div>
 
       <div class="input-group">
+        <input type="email" id="user-email" placeholder=" ">
         <label for="user-email">Email:</label>
-        <input type="email" id="user-email" placeholder="tu.email@ejemplo.com">
       </div>
 
       <div class="input-group">
+        <select id="user-country">
+          <option value="">Selecciona</option>
+          <option value="República Dominicana">República Dominicana</option>
+          <option value="Puerto Rico">Puerto Rico</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Otro">Otro</option>
+        </select>
         <label for="user-country">País:</label>
-        <input type="text" id="user-country" placeholder="Tu País" value="República Dominicana" required>
       </div>
 
       <!-- Nuevos campos -->
       <div class="input-group">
+        <input type="tel" id="user-phone" placeholder=" ">
         <label for="user-phone">Teléfono:</label>
-        <input type="tel" id="user-phone" placeholder="Ej: 809-555-1234">
       </div>
 
       <div class="input-group">
-        <label for="user-sex">Sexo:</label>
         <select id="user-sex">
           <option value="">Selecciona</option>
           <option value="Masculino">Masculino</option>
@@ -62,10 +67,10 @@
           <option value="Otro">Otro</option>
           <option value="Prefiero no decir">Prefiero no decir</option>
         </select>
+        <label for="user-sex">Sexo:</label>
       </div>
 
       <div class="input-group">
-        <label for="user-address">Dirección (San Pedro de Macorís):</label>
         <select id="user-address" required>
           <option value="">Selecciona un lugar</option>
           <option value="San Pedro de Macorís (Ciudad)">San Pedro de Macorís (Ciudad)</option>
@@ -93,6 +98,7 @@
           <option value="Hato Mayor (Ciudad)">Hato Mayor (Ciudad)</option>
           <option value="Monteplata (Ciudad)">Monte Plata (Ciudad)</option>
         </select>
+          <label for="user-address">Dirección (San Pedro de Macorís):</label>
       </div>
 
       <button type="submit" id="enter-button">Ingresar</button>
