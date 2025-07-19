@@ -170,7 +170,7 @@ button:active {
 
 .input-group {
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .input-group:last-of-type {
@@ -179,7 +179,7 @@ button:active {
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: #333;
     font-size: 1em;
@@ -190,23 +190,29 @@ button:active {
 .modal-content label {
             position: absolute;
             left: 10px;
+    		background-color: white;
             top: 10px;
-            transition: 0.3s;
+            transition: 0.3s ease;
             color: #888;
         }
-.modal-content input:focus + label,
-        input:not(:placeholder-shown) + label {
-            top: -15px;
+.modal-content input:focus + label {
+    		transform:translateY(-50%) scale(0.85);
+    		top:-0px
+            background-color: #fff;
+    		color: #007BFF;
+}
+		input:not(:placeholder-shown) + label {
+        	transform:translateY(-50%) scale(0.85);
+            top: 0px;
             left: 0;
-            color: #007BFF;
-            font-size: 12px;
+            background-color: #fff;
         }
 .modal-content input[type="text"],
 .modal-content input[type="email"],
 .modal-content input[type="tel"],
 .modal-content select {
     width: 100%;
-    padding: 20px 10px;
+    padding: 15px 10px;
     border: 1px solid #ccc;
     border-radius: 15px;
     font-size: 1em;
