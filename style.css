@@ -204,7 +204,7 @@ button:active {
 	input:not(:placeholder-shown) + label {
 		transform: translateY(-50%) scale(0.85);
 		top: 0px;
-		left: 0px;
+		left: 5px;
 		background-color: #fff;
 	}
 .modal-content input[type="text"],
