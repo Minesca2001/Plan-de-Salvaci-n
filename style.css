@@ -234,7 +234,31 @@ button:active {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
+.input-group {
+  position: relative;
+}
 
+.input-group select + label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  background-color: white;
+  padding: 0 5px;
+  color: #888;
+  transition: 0.3s ease;
+  pointer-events: none;
+  font-size: 1em;
+}
+
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 0.85em;
+  color: #007BFF;
+  background-color: #fff;
+			     }
+	  
 .modal-content button {
     width: 100%;
     margin-top: 20px;
