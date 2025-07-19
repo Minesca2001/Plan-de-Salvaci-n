@@ -212,7 +212,7 @@ button:active {
 .modal-content input[type="tel"],
 .modal-content select {
     width: 100%;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
