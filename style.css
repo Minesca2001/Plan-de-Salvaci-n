@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     padding: 20px;
     margin: 0;
+	text-align: center;
 }
 
 .container {
@@ -42,7 +43,7 @@ h1 {
 }
 
 .step img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 20px;
     border-radius: 5px;
